@@ -19,6 +19,8 @@
                             $(e).iCheck('check')
                     } else if ($e.is('select')) {
                         e.value = value
+                    } else if ($e.is('textarea')) {
+                        e.value = value || ''
                     }
                 })
                 $settings.css({
@@ -159,6 +161,14 @@
                                             .append($('<option>', { html:'百度', value:'baidu' }))
                                         )
                                     )
+                                ).append($('<tr>', {})
+                                    .append($('<td>', { align: 'left', html: '自定义样式' }))
+                                    .append($('<td>', { align: 'right'})
+                                        .append($('<i>', { 'class': 'icon icon-help', 'data-tip': "s$t$自定义合适的样式"}))
+                                    )
+                                    .append($('<td>', { colspan: 4, align: 'right'})
+                                        .append($('<textarea>', { type: "checkbox", 'class': "izh-option", id: "iZhihu_setCustomCssText", name: "CustomCssText", style: "width:100%;height:80px"}))
+                                    )
                                 )
                             )
                         )
@@ -196,7 +206,7 @@
                 var value = this.checked
                 utils.setCfg(key, value)
             })
-          , $sel = $(e).filter('select').bind('change', function() {
+          , $sel = $(e).filter('select,textarea').bind('change', function() {
                 utils.setCfg(key, this.value)
             })
     })

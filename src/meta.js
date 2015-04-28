@@ -17,7 +17,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // @grant        GM_getResourceURL
-// @icon         http://izhihu.unogz.com/logo.png
+// @icon         http://static.zhihu.com/static/img/ios/zhihu(120px).png
 // @copyright    2013+, @钢盅郭子 @刘勇 @罗大睿
 // ==/UserScript==
 

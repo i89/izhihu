@@ -54,6 +54,7 @@ var izhHomeLayout = window.iZhihu.config['HomeLayout']
   , izhHomeNoti = window.iZhihu.config['HomeNoti']
   , izhQuickBlock = window.iZhihu.config['QuickBlock']
   , izhTopNavAutoFold = window.iZhihu.config['TopNavAutoFold']
+  , izhCustomCssText = window.iZhihu.config['CustomCssText']
 ;
 
 utils.transferOldCfg();
@@ -263,6 +264,14 @@ if (heads.length > 0) {
         node.type = "text/css";
         node.id = "izhCSS_comment";
         node.appendChild(_doc.createTextNode(css_comment));
+        heads[0].appendChild(node);
+    }
+
+    if(izhCustomCssText!=''){
+        node = _doc.createElement("style")
+        node.type = "text/css";
+        node.id = "izhCSS_custom";
+        node.appendChild(_doc.createTextNode(izhCustomCssText));
         heads[0].appendChild(node);
     }
 }
